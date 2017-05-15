@@ -9,6 +9,7 @@
   #include <abstractions/postfix-common>
 
   capability dac_override,
+  capability dac_read_search,
   capability net_bind_service,
   capability setgid,
   capability setuid,
