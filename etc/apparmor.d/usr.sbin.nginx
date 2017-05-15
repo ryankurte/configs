@@ -14,8 +14,8 @@
   capability setgid,
   capability setuid,
 
-  deny /etc/passwd r,
-
+  # nginx (defalt config) won't start without passwd file access :-(
+  /etc/passwd r,
   /etc/group r,
   /etc/nginx/** r,
   /etc/nsswitch.conf r,
