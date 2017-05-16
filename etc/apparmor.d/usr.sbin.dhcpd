@@ -1,0 +1,27 @@
+#include <tunables/global>
+
+/usr/sbin/dhcpd flags=(complain) {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+
+  capability dac_override,
+  capability net_bind_service,
+  capability net_raw,
+  capability setgid,
+  capability setuid,
+  capability sys_chroot,
+
+  network inet raw,
+  network packet raw,
+
+  /db/dhcpd.leases*     lrw,
+  /etc/dhcpd.conf	r,
+  /etc/named.d/*	r,
+  /etc/hosts.allow	r,
+  /etc/hosts.deny	r,
+  @{PROC}/net/dev	r,
+  /usr/sbin/dhcpd	rmix,
+  /var/lib/dhcp/{db/,}dhcpd.leases*	rwl,
+  /var/lib/dhcp/etc/dhcpd.conf  r,
+  /{,var/}run/dhcpd.pid	wl,
+}
