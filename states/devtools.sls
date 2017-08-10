@@ -7,7 +7,6 @@ Install development tools:
       - subversion
       - build-essential
       - clang
-      - gcc-arm-none-eabi
       - cmake
       - make
       - automake
