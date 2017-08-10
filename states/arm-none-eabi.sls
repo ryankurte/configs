@@ -16,7 +16,7 @@ install gcc-arm-none-eabi:
 
 extract gcc-arm-none-eabi:
   archive.extracted:
-    - name: /opt/{{ gcc_version }}
+    - name: /opt/
     - source: /opt/{{ gcc_version }}.tar.bz2
     - trim_output: true
 
