@@ -5,7 +5,7 @@
 
 install gcc-arm-none-eabi:
   file.managed:
-    {% if grains['os'] == 'OSX' %}
+    {% if grains['os'] == 'MacOS' %}
     - source: https://developer.arm.com/-/media/Files/downloads/gnu-rm/{{ gcc_release }}/{{ gcc_version }}-mac.tar.bz2
     - source_hash: d536d7fb167c04b24f7f0d40cd739cac
     {% else %}
